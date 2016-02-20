@@ -5,12 +5,19 @@ Rails.application.routes.draw do
 
   resources :tests
   resources :questions
+  resources :answers
 
   resources :tests do
     resources :questions
   end
 
+  resources :questions do
+    resources :answers
+  end
+
+
   get 'questions/create_question_with_test/:id' => 'questions#create_question_with_test', as: 'create_question_with_test'
+  get 'answers/create_answer_with_question/:id' => 'answers#create_answer_with_question', as: 'create_answer_with_question'
 
 
   #resources :users
