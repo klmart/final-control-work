@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get 'answers/create_answer_with_question/:id' => 'answers#create_answer_with_question', as: 'create_answer_with_question'
 
 
-  #resources :users
+  resources :users
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,5 +1,7 @@
 class QuestionsController < ApplicationController
-    def new
+  before_action :authenticate_user!
+
+def new
       @question = Question.new
     end
 

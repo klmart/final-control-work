@@ -1,4 +1,6 @@
 class TestsController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @test = Test.new
   end
@@ -7,7 +9,8 @@ class TestsController < ApplicationController
     @test = Test.new(test_params)
     if @test.save
       redirect_to tests_url
-      else render 'new'
+    else
+      render 'new'
     end
   end
 
