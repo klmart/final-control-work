@@ -34,6 +34,6 @@ class TestsController < ApplicationController
 
   private
   def test_params
-    params.require(:test).permit(:name, :link)
+    params.require(:test).permit(:name, :link, :description)
   end
 end
