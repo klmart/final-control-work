@@ -1,4 +1,3 @@
-
 <p class="mg-bottom-20">
   <%= link_to 'Добавить тест', new_test_path, class: 'btn btn-success' %>
 </p>
@@ -16,7 +15,7 @@
   <% @tests.each do |test| %>
       <tr>
         <td><%= link_to test.name, test_path(test) %></td>
-        <td><%= test.link %></td>
+        <td> <%= link_to 'Получить тест', get_test_path(test) %></td>
         <td><%= test.questions.count %></td>
         <td><%= 'res' %></td>
         <td>

@@ -30,15 +30,12 @@ end
 
 #Answers
 question_id_counter = -1
-answer_content = 'Ответ №'
-answer_counter = 0
 answers = []
 20.times do
-  answer_counter += 1
   question_id_counter += 1
-  answers.push Answer.create!(question:questions[question_id_counter], content: "#{answer_counter}" + "#{answer_content}", answer_status: false)
-  answers.push Answer.create!(question:questions[question_id_counter], content: "#{1}" + "#{answer_counter}" + "#{answer_content} ", answer_status: false)
-  answers.push Answer.create!(question:questions[question_id_counter], content: "#{2}" + "#{answer_counter}" + "#{answer_content} ", answer_status: false)
-  answers.push Answer.create!(question:questions[question_id_counter], content: "#{3}" + "#{answer_counter}" + "#{answer_content} ", answer_status: true)
+  answers.push Answer.create!(question:questions[question_id_counter], content: "Ответ №1", answer_status: false)
+  answers.push Answer.create!(question:questions[question_id_counter], content: "Ответ №2", answer_status: false)
+  answers.push Answer.create!(question:questions[question_id_counter], content: "Ответ №3", answer_status: false)
+  answers.push Answer.create!(question:questions[question_id_counter], content: "Ответ №4", answer_status: true)
 end
 
