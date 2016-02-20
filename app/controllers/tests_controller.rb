@@ -33,6 +33,13 @@ class TestsController < ApplicationController
     end
   end
 
+  def destroy
+    @test = Test.find(params[:id])
+    @test.destroy
+    flash[:success] = 'Учетная запись успешно удалена'
+    redirect_to tests_url
+  end
+
   private
   def test_params
     params.require(:test).permit(:name, :link, :description)

@@ -29,7 +29,8 @@ class QuestionsController < ApplicationController
     def update
       @question = Question.find(params[:id])
       if @question.update(question_params)
-        redirect_to questions_url
+        test = @question.test
+        redirect_to test_url(test.id)
       else
         render 'edit'
       end
@@ -38,6 +39,14 @@ class QuestionsController < ApplicationController
     def create_question_with_test
       @question = Question.new
       @test = Test.find(params[:id])
+    end
+
+    def destroy
+      @question = Question.find(params[:id])
+      @question.destroy
+      flash[:success] = 'Учетная запись успешно удалена'
+      test = @question.test
+      redirect_to test_url(test.id)
     end
 
     private
