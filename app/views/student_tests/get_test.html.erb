@@ -13,15 +13,10 @@
 <h1><%= @test.name %></h1>
 
 <h1>Вопросы: </h1>
-<%= form_for @test do |f| %>
     <% @test.questions.each do |question| %>
         <%= question.content %> <br> <br>
         <% question.answers.each do |answer| %>
-            <%= form_for answer %>
-            <%= f.label :name %>
-            <%= f.radio_button :description, {} %>
-
+            <%= answer.content %> <br>
         <% end %>
         <hr>
     <% end %>
-<% end %>

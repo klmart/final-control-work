@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'questions/create_question_with_test/:id' => 'questions#create_question_with_test', as: 'create_question_with_test'
   get 'answers/create_answer_with_question/:id' => 'answers#create_answer_with_question', as: 'create_answer_with_question'
   get 'student_tests/get_test/:id' => 'student_tests#get_test', as: 'get_test'
+  get 'student_tests/student_test/:id' => 'student_tests#student_test', as: 'student_test'
 
 
   resources :users
