@@ -4,7 +4,7 @@
       <%= f.label :content, value: 'Описание', class: 'col-md-3 col-sm-3 col-xs-12 control-label' %>
       <div class="col-md-6 col-sm-6 col-xs-12">
         <%= f.text_area :content, class: 'form-control' %>
-        <%= render 'shared/field_errors', object: @question, field_name: :question %>
+        <%= render 'shared/field_errors', object: @question, field_name: :content %>
       </div>
     </div>
 

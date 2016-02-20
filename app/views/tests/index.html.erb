@@ -17,7 +17,7 @@
       <tr>
         <td><%= link_to test.name, test_path(test) %></td>
         <td><%= test.link %></td>
-        <td><%= '20' %></td>
+        <td><%= test.questions.count %></td>
         <td><%= 'res' %></td>
         <td>
           <%= link_to 'Edit'.html_safe,
