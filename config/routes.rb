@@ -1,10 +1,21 @@
 Rails.application.routes.draw do
-root 'tests#index'
+  root 'tests#index'
 
   devise_for :users
 
   resources :tests
-  resources :users
+  resources :questions
+
+  resources :tests do
+    resources :questions
+  end
+
+  get 'questions/create_question_with_test/:id' => 'questions#create_question_with_test', as: 'create_question_with_test'
+
+
+  #resources :users
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

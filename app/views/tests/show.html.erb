@@ -1,2 +1,33 @@
-<h1>Tests#show</h1>
-<p>Find me in app/views/tests/show.html.erb</p>
+<h2>Вопросы для теста "<%= @test.name %>"</h2>
+<p class="mg-bottom-20">
+  <%= link_to 'Добавить вопрос', create_question_with_test_path(@test),  class: 'btn btn-success' %>
+</p>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th class="col-md-3 col-sm-3">Question</th>
+    <th class="col-md-3 col-sm-3">Answers</th>
+    <th class="col-md-3 col-sm-3">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @questions.each do |question| %>
+      <tr>
+        <td><%= link_to question.content  %></td>
+        <td><%= 'answer cpunter' %></td>
+        <td>
+          <%= link_to 'Edit'.html_safe,
+                      edit_question_path(question),
+                      class: 'btn btn-default btn-xs',
+                      id: "question_#{question.id}_edit" %>
+          <%= link_to 'Remove'.html_safe,
+                      question_path(question),
+                      method: :delete,
+                      data: {confirm: 'Вы действительно хотите удалить вопрос?'},
+                      class: 'btn btn-danger btn-xs',
+                      id: "question_#{question.id}_delete" %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
